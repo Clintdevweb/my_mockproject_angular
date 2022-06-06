@@ -11,7 +11,7 @@ import {
   docData,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { addDoc, doc } from 'firebase/firestore';
+import { addDoc, deleteDoc, doc, setDoc } from 'firebase/firestore';
 
 @Injectable()
 export class AppointmentsService {
@@ -34,5 +34,23 @@ export class AppointmentsService {
     const me = this;
     let $appointRef = doc(me.fireStore, 'list-assignment/' + id);
     return docData($appointRef, { idField: 'id' }) as Observable<Item>;
+  }
+
+  deleteAppoint(id: string) {
+    const me = this;
+    let $appointRef = doc(me.fireStore, 'list-assignment/' + id);
+    return deleteDoc($appointRef);
+  }
+
+  updateAppoint(id: any, dataAppoint: Item) {
+    const me = this;
+    let $appointRef = doc(me.fireStore, 'list-assignment/' + id);
+    return setDoc($appointRef, dataAppoint);
+  }
+
+  changeStatusAppoint(dataItem: any) {
+    const me = this;
+    let $appointRef = doc(me.fireStore, 'list-assignment/' + dataItem.id);
+    return setDoc($appointRef, { ...dataItem, active: !dataItem?.active });
   }
 }

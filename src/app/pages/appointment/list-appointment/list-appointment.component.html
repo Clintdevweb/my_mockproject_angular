@@ -32,7 +32,7 @@
         </td>
         <td>{{ Item?.time }}</td>
         <td>{{ Item?.gender }}</td>
-        <td>{{ Item?.phone }}</td>
+        <td>{{ Item?.phone | phone: "vi" }}</td>
         <td>
           <div class="fa-list-patients__icons-container">
             <div>
@@ -56,22 +56,27 @@
               </div>
             </div>
             <div>
-              <div class="fa-list-patients__action-icon">
+              <div
+                (click)="deleteAppointment(Item?.id)"
+                class="fa-list-patients__action-icon"
+              >
                 <svg-icon src="../../../../assets/icons/svg/bin.svg"></svg-icon>
               </div>
             </div>
           </div>
         </td>
         <td>
-          <div
-            *ngIf="Item?.active; else cancel"
-            class="fa-list-patients__appointment"
-          >
-            Start Appointment
+          <div (click)="changeActiveAppoint(Item)">
+            <div
+              *ngIf="Item?.active; else cancel"
+              class="fa-list-patients__appointment"
+            >
+              Start Appointment
+            </div>
+            <ng-template #cancel>
+              <div class="fa-list-patients__canceled">Canceled</div>
+            </ng-template>
           </div>
-          <ng-template #cancel>
-            <div class="fa-list-patients__canceled">Canceled</div>
-          </ng-template>
         </td>
       </tr>
     </ng-template>

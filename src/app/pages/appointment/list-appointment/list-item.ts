@@ -4,6 +4,6 @@ export interface Item {
   date?: string;
   time?: string;
   gender?: string;
-  phone?: number;
+  phone?: string;
   active?: boolean;
 }

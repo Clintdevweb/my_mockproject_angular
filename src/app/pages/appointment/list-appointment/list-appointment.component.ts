@@ -13,6 +13,7 @@ import { BaseComponent } from 'src/app/shared/base/base.component';
 import { Item } from './list-item';
 import { object } from 'rxfire/database';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-appointment',
@@ -89,14 +90,14 @@ export class ListAppointmentComponent extends BaseComponent implements OnInit {
     const me = this;
     me.formAppointmentUpdate = me.fb.group({
       [me.fieldKeyNames.username]: [
-        '',
+        me.Item.name,
         [Validators.required, Validators.minLength(me.minlength)],
       ],
-      [me.fieldKeyNames.times]: ['', Validators.required],
-      [me.fieldKeyNames.date]: ['', Validators.required],
-      [me.fieldKeyNames.gender]: ['', Validators.required],
+      [me.fieldKeyNames.times]: [me.Item.time, Validators.required],
+      [me.fieldKeyNames.date]: [me.Item.date, Validators.required],
+      [me.fieldKeyNames.gender]: [me.Item.gender, Validators.required],
       [me.fieldKeyNames.phonenumber]: [
-        '',
+        me.Item.phone,
         [Validators.required, me.getPatternPhoneErr(me.fieldKeyNames)],
       ],
     });
@@ -104,13 +105,22 @@ export class ListAppointmentComponent extends BaseComponent implements OnInit {
 
   // Items
   listItems: Item[] = [];
-  Item!: Item;
+  Item: Item = {
+    id: '',
+    name: '',
+    date: '',
+    time: '',
+    gender: '',
+    phone: '',
+    active: false,
+  };
   display: boolean = false;
   displayUpdate: boolean = false;
   constructor(
     private apppointServices: AppointmentsService,
     private fb: FormBuilder,
-    private _location: Location
+    private _location: Location,
+    private router: Router
   ) {
     super();
   }
@@ -154,8 +164,9 @@ export class ListAppointmentComponent extends BaseComponent implements OnInit {
       }
     );
     if (isFormValid) {
-      me.apppointServices.addApponintment(valueOfForm);
-      me._location.back();
+      me.apppointServices.updateAppoint(me.Item?.id, valueOfForm);
+      me.displayUpdate = false;
+      // me.router.navigate(['list-appointment']);
     }
     me.focusElementInvalid();
   }
@@ -171,5 +182,21 @@ export class ListAppointmentComponent extends BaseComponent implements OnInit {
   updateAppointment(id: string) {
     const me = this;
     me.displayUpdate = true;
+    me.apppointServices.getAppoint(id).subscribe((valueItem) => {
+      me.Item = { ...me.Item, ...valueItem };
+      // console.log(me.Item)
+      me.buildForm();
+    });
+  }
+
+  // deleteAppoint
+  deleteAppointment(id: string) {
+    const me = this;
+    me.apppointServices.deleteAppoint(id);
+  }
+  // changeActiveAppoint
+  changeActiveAppoint(dataItem: any) {
+    const me = this;
+    me.apppointServices.changeStatusAppoint(dataItem);
   }
 }

@@ -22,6 +22,7 @@ import { environment } from 'src/environments/environment';
 import { DialogModule } from 'primeng/dialog';
 
 import { AppointmentRoutes } from './appointment.routing';
+import { PhonePipe } from 'src/app/shared/pipes/phone.pipe';
 
 const imports: any = [
   CommonModule,
@@ -46,6 +47,7 @@ const declarations: any = [
   NewAppointmentComponent,
   ListAppointmentComponent,
   AppointmentComponent,
+  PhonePipe
 ];
 
 @NgModule({
