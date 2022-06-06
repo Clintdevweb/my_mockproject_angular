@@ -1,0 +1,181 @@
+@import "../../../shared/styles/variable";
+@mixin custom {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.fa-list-patients {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #293a58;
+  border-radius: 14px;
+  &__avatar {
+    // display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: $light-white;
+    border-radius: 7px;
+    margin-right: 12px;
+  }
+  &__icons-container {
+    display: flex;
+  }
+  &__action-icon {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 9px;
+    border: 1px solid $lightDarkBlue;
+    margin-right: 10px;
+  }
+  &__appointment {
+    padding: 10px 5px;
+    color: $green;
+    background-color: $light-green;
+    border-radius: 6px;
+  }
+  &__canceled {
+    padding: 10px 5px;
+    color: $red;
+    background-color: $light-red;
+    border-radius: 6px;
+    text-align: center;
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  td,
+  th {
+    text-align: left;
+    vertical-align: middle;
+
+    font-style: normal;
+    line-height: 16px;
+    font-weight: 500;
+    font-size: 13px;
+    color: $white;
+  }
+  th:nth-child(6),
+  th:last-child {
+    text-align: center;
+  }
+  td:last-child {
+    .fa-list-patients__appointment {
+      text-align: center;
+    }
+  }
+  .fa-head-table {
+    th {
+      border: none;
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+
+      &:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+  }
+  .fa-body-table {
+    td {
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:nth-child(6) {
+        .fa-list-patients__icons-container {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  td {
+    background-color: $darkblue;
+    border: none;
+  }
+  th {
+    background-color: $lightDarkBlue;
+  }
+
+  form {
+    .fa-caption-form {
+      color: $white;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 25px;
+      text-align: center;
+      display: block;
+    }
+
+    .fa-form-box {
+      margin-bottom: 10px;
+      ::ng-deep {
+        .p-inputgroup {
+          justify-content: center;
+        }
+      }
+    }
+    .fa-input-form {
+      @include custom;
+    }
+    .fa-select-gender {
+      @include custom;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    .fa-submit-appointment {
+      text-align: right;
+      transition: all 0.5s;
+    }
+    .fa-error {
+      text-align: left;
+      margin: 0 auto;
+      color: $red !important;
+    }
+  }
+
+  // dialog
+  .fa-dialog-container {
+    .fa-dialog-appointment {
+      // padding: 20px;
+
+      &__avatar {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      &__info {
+        // padding: 0 20px;
+        &__detail {
+          color: $white;
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .p-dialog {
+  .p-dialog-content {
+    background: #3c4e6e;
+  }
+  .p-dialog-header {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    background: #3c4e6e;
+    .p-dialog-title {
+      color: $white;
+    }
+  }
+}

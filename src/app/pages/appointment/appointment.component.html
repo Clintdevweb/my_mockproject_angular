@@ -1,0 +1,37 @@
+<div class="fa-appointment-container">
+  <!-- Header of the appointment -->
+  <div class="fa-appointment-header">
+    <!-- Lefthand div -->
+    <div class="fa-appoinment-header__left">
+      <h3 class="fa-appointment-header__title">Upcoming Appointments</h3>
+    </div>
+    <!-- Right-hand div -->
+    <div class="fa-appointment-header__right">
+      <div class="fa-appointment-header__status">
+        <select class="form-select form-select-sm mb-2 fa-custom-select">
+          <option selected>All statuses</option>
+          <option value="1">Active</option>
+          <option value="2">Cancel</option>
+          <option value="3">Pospone</option>
+        </select>
+      </div>
+
+      <div class="fa-appointment-header__cabinet">
+        <select class="form-select form-select-sm mb-2 fa-custom-select">
+          <option selected>All cabinets</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+
+      <div class="fa-appointment-header__new">
+        <button class="fa-newBtn" (click)="showForm()"  pButton type="button">New Appointment</button>
+      </div>
+    </div>
+  </div>
+  <!-- End of header -->
+  <div>
+    <app-list-appointment></app-list-appointment>
+  </div>
+</div>

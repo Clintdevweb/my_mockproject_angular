@@ -1,0 +1,98 @@
+<section class="fa-dashboard-container">
+  <div class="row">
+    <div class="col-3">
+      <div class="fa-dashboard-box">
+        <div class="fa-dashboard-box__item">
+          <div class="fa-dashboard-box__item__setting">
+            <svg-icon src="../../../assets/icons/svg/settingdot.svg"></svg-icon>
+          </div>
+          <div class="fa-dashboard-box__item__content">
+            <div class="fa-dashboard-box__item__icon fa-bg-blue">
+              <svg-icon src="../../../assets/icons/svg/calendar.svg"></svg-icon>
+            </div>
+            <div class="fa-dashboard-box__item__quantity">
+              <p>500</p>
+              <p>Appoinment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="fa-dashboard-box">
+        <div class="fa-dashboard-box__item">
+          <div class="fa-dashboard-box__item__setting">
+            <svg-icon src="../../../assets/icons/svg/settingdot.svg"></svg-icon>
+          </div>
+          <div class="fa-dashboard-box__item__content">
+            <div class="fa-dashboard-box__item__icon fa-bg-violet">
+              <svg-icon src="../../../assets/icons/svg/scissor.svg"></svg-icon>
+            </div>
+
+            <div class="fa-dashboard-box__item__quantity">
+              <p>104</p>
+              <p>Operators</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="fa-dashboard-box">
+        <div class="fa-dashboard-box__item">
+          <div class="fa-dashboard-box__item__setting">
+            <svg-icon src="../../../assets/icons/svg/settingdot.svg"></svg-icon>
+          </div>
+          <div class="fa-dashboard-box__item__content">
+            <div class="fa-dashboard-box__item__icon fa-bg-pink">
+              <svg-icon
+                src="../../../assets/icons/svg/newpatients.svg"
+              ></svg-icon>
+            </div>
+
+            <div class="fa-dashboard-box__item__quantity">
+              <p>150</p>
+              <p>New Patients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="fa-dashboard-box">
+        <div class="fa-dashboard-box__item">
+          <div class="fa-dashboard-box__item__setting">
+            <svg-icon src="../../../assets/icons/svg/settingdot.svg"></svg-icon>
+          </div>
+          <div class="fa-dashboard-box__item__content">
+            <div class="fa-dashboard-box__item__icon fa-bg-darkpink">
+              <svg-icon src="../../../assets/icons/svg/earns.svg"></svg-icon>
+            </div>
+
+            <div class="fa-dashboard-box__item__quantity">
+              <p>$20,500</p>
+              <p>Earning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fa-dashboard-charts">
+    <div class="row">
+      <div class="col-8">
+        <div class="card">
+          <h5>Hospital Srvey</h5>
+          <p-chart
+            type="line"
+            [data]="basicData"
+            [options]="basicOptions"
+          ></p-chart>
+        </div>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+</section>

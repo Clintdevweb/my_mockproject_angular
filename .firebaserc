@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mock-my-medical-21757": {
+      "hosting": {
+        "medical-app": [
+          "mock-my-medical-21757"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mock-my-medical-21757"
+  }
+}

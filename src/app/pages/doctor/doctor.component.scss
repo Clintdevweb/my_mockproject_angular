@@ -1,0 +1,73 @@
+@import "../../shared/styles/variable";
+.fa-doctor-area {
+  color: $white;
+  .fa-doctor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+    .fa-btn-doctor {
+      color: $white;
+      background-color: $violet;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+  }
+  .fa-doctor-content {
+    .fa-doctor-card {
+      ::ng-deep {
+        .p-card-body {
+          padding: 0px;
+        }
+        .p-card-content {
+          h4 {
+            font-size: 22px;
+          }
+        }
+        .p-card {
+          background-color: $lightDarkBlue;
+        }
+      }
+
+      &__menu {
+        text-align: right;
+      }
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .fa-avatar-doctor {
+        ::ng-deep {
+          .p-badge {
+            top: 70%;
+            right: 5%;
+            min-width: 10px;
+            width: 10px;
+            height: 10px;
+          }
+        }
+
+        img {
+          height: 65px;
+          width: 65px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+
+      .fa-text_light {
+        color: $darkGray;
+        font-weight: 400;
+      }
+
+      .fa-text_white {
+        color: $white;
+      }
+    }
+  }
+}

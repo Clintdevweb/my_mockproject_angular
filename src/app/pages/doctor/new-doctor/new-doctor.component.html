@@ -1,0 +1,116 @@
+<section class="fa-form-doctor">
+  <div class="row">
+    <div class="col-4">
+      <div class="fa-avatar-doctor">
+        <img src="../../../../assets/images/doctor-avatar.jpg" alt="" />
+      </div>
+    </div>
+    <div class="col-8">
+      <form action="" [formGroup]="formDoctor">
+        <caption class="fa-caption-form">
+          Doctor
+        </caption>
+        <div class="fa-form-box col-12 md:col-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input
+              [formControlName]="fieldKeyNames.name"
+              type="text"
+              pInputText
+              placeholder="User name"
+              class="fa-input-form"
+            />
+          </div>
+          <div class="fa-error" *ngIf="isInValid(fieldKeyNames.name)">
+            <p *ngFor="let msgError of getErrorByField(fieldKeyNames.name)">
+              {{ msgError }}
+            </p>
+          </div>
+        </div>
+        <div class="fa-form-box col-12 md:col-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-home"></i></span>
+            <input
+              [formControlName]="fieldKeyNames.hospital"
+              type="text"
+              pInputText
+              placeholder="Hospital"
+              class="fa-input-form"
+              
+            />
+          </div>
+          <div class="fa-error" *ngIf="isInValid(fieldKeyNames.hospital)">
+            <p *ngFor="let msgError of getErrorByField(fieldKeyNames.hospital)">
+              {{ msgError }}
+            </p>
+          </div>
+        </div>
+        <div class="fa-form-box col-12 md:col-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"
+              ><i class="pi pi-calendar"></i
+            ></span>
+            <input
+              [formControlName]="fieldKeyNames.specialize"
+              type="text"
+              pInputText
+              placeholder="Specialize"
+              class="fa-input-form"
+            />
+          </div>
+          <div class="fa-error" *ngIf="isInValid(fieldKeyNames.specialize)">
+            <p
+              *ngFor="let msgError of getErrorByField(fieldKeyNames.specialize)"
+            >
+              {{ msgError }}
+            </p>
+          </div>
+        </div>
+        <div class="fa-form-box col-12 md:col-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input
+              [formControlName]="fieldKeyNames.phone"
+              type="text"
+              pInputText
+              placeholder="Phone"
+              class="fa-input-form"
+            />
+          </div>
+          <div class="fa-error" *ngIf="isInValid(fieldKeyNames.phone)">
+            <p *ngFor="let msgError of getErrorByField(fieldKeyNames.phone)">
+              {{ msgError }}
+            </p>
+          </div>
+        </div>
+        <div class="fa-form-box col-12 md:col-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"
+              ><i class="pi pi-envelope"></i
+            ></span>
+            <input
+              [formControlName]="fieldKeyNames.email"
+              type="text"
+              pInputText
+              placeholder="Email"
+              class="fa-input-form"
+            />
+          </div>
+          <div class="fa-error" *ngIf="isInValid(fieldKeyNames.email)">
+            <p *ngFor="let msgError of getErrorByField(fieldKeyNames.email)">
+              {{ msgError }}
+            </p>
+          </div>
+        </div>
+        <div class="fa-submit-doctor">
+          <button
+            pButton
+            type="button"
+            label="Done"
+            (click)="handleDoctor(formDoctor.value)"
+          ></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

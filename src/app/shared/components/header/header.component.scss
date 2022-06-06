@@ -1,0 +1,21 @@
+@import "../../../shared/styles/variable";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $darkblue;
+  padding: 20px 40px;
+  .fa-search-input{
+    background-color: transparent;
+  }
+  .icon {
+    padding-top: 7px;
+  }
+  .img {
+    padding-top: 5px;
+  }
+}
+.fa-btn {
+  background-color: transparent;
+}

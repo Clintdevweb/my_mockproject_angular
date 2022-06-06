@@ -1,0 +1,63 @@
+@import "../../shared/styles/variable";
+
+.fa-appointment-container {
+  font-family: "Inter", sans-serif;
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  background-color: $darkestBlue;
+  color: $text-color;
+  // padding: 40px 30px;
+
+  .fa-appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__right {
+      display: flex;
+    }
+    &__title {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+    &__status {
+      width: 150px;
+      height: 40px;
+      margin-right: 10px;
+      .fa-custom-select {
+        background-color: $lightDarkBlue;
+        padding-left: 12px;
+        color: $text-color;
+        height: 40px;
+        // background-image: url("../../../assets/icons/svg/vetor.svg") !important;
+      }
+    }
+    &__cabinet {
+      width: 150px;
+      height: 40px;
+      margin-right: 10px;
+      .fa-custom-select {
+        background-color: $lightDarkBlue;
+        color: $text-color;
+        padding-left: 12px;
+        height: 40px;
+        background-image: url("../../../assets/icons/svg/vetor.svg") !important;
+      }
+    }
+    &__new {
+      ::ng-deep {
+        .p-button {
+          padding: 7px;
+        }
+      }
+      .fa-newBtn {
+        background-color: $violet !important;
+        transition: all 0.5s;
+
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}

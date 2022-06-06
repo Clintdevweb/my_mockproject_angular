@@ -1,0 +1,38 @@
+<div class="fa-sidebar-area">
+  <div class="fa-sidebar-area__logo">
+    <div class="fa-sidebar-area__svg">
+      <svg-icon src="../../../../assets/icons/svg/logo.svg"></svg-icon>
+    </div>
+    <div>
+      <span class="fa-sidebar-area__text"> Medix</span>
+      <span class="fa-sidebar-area__point">.</span>
+    </div>
+  </div>
+  <div>
+    <ul class="fa-sidebar-nav">
+      <li
+        [routerLink]="'/' + [nav.name]"
+        [routerLinkActive]="['active']"
+        *ngFor="let nav of navs"
+        class="fa-sidebar-nav__item"
+      >
+        <svg-icon src="../../../../assets/icons/svg/{{ nav.name }}.svg">
+          <!-- [stretch]="true" -->
+        </svg-icon>
+        <span class="fa-sidebar-nav__nav">{{ nav.name | titlecase }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="fa-sidebar-register">
+    <svg-icon class="doctor" src="../../../../assets/icons/svg/add.svg">
+    </svg-icon>
+    <span class="fa-sidebar-regis__text">Register Patients</span>
+  </div>
+  <div class="fa-sidebar-bottom">
+    <img src="../../../../assets/images/side-bar.png" alt="" />
+    <div class="fa-sidebar-bottom__setting">
+      <svg-icon src="../../../../assets/icons/svg/setting.svg"></svg-icon>
+      <span>Setting</span>
+    </div>
+  </div>
+</div>

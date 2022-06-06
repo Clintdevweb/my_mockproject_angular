@@ -1,0 +1,60 @@
+@import "../../shared/styles/variable";
+p {
+  margin: 0;
+  padding: 0;
+}
+.fa-bg-blue {
+  background-color: $blue;
+}
+
+.fa-bg-violet {
+  background-color: $violet;
+}
+
+.fa-bg-pink {
+  background-color: $pink;
+}
+
+.fa-bg-darkpink {
+  background-color: $darkpink;
+}
+
+.fa-dashboard-container {
+  .fa-dashboard-box {
+    padding: 22px;
+    background-color: $darkblue;
+    border-radius: 10px;
+    &__item {
+      &__setting {
+        text-align: right;
+      }
+      &__content {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+      }
+      &__icon {
+        padding: 20px;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+      &__quantity {
+        font-weight: 500;
+        font-size: 20px;
+        color: $white;
+        p:last-of-type {
+          color: $lightDarkBlue;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .fa-dashboard-charts {
+      margin-top: 30px;
+      .card{
+          padding: 24px;
+          color: $white;
+          background-color: $lightDarkBlue;
+      }
+  }
+}
