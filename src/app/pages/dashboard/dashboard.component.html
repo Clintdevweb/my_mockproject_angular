@@ -85,14 +85,12 @@
       <div class="col-8">
         <div class="card">
           <h5>Hospital Srvey</h5>
-          <p-chart
-            type="line"
-            [data]="basicData"
-            [options]="basicOptions"
-          ></p-chart>
+          <canvas id="chartLineId"></canvas>
         </div>
       </div>
-      <div class="col-4"></div>
+      <div class="col-4">
+        <canvas id="chartBarId"></canvas>
+      </div>
     </div>
   </div>
 </section>
