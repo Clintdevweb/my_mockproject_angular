@@ -26,6 +26,7 @@
     "boostrap": "^2.0.0",
     "bootstrap": "^5.1.3",
     "chart.js": "^3.8.0",
+    "chartjs": "^0.3.24",
     "firebase": "^9.8.2",
     "jquery": "^3.6.0",
     "node-modules": "^1.0.1",

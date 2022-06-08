@@ -1,4 +1,7 @@
 @import "../../shared/styles/variable";
+canvas{
+  height: 100%;
+}
 p {
   margin: 0;
   padding: 0;
@@ -50,11 +53,12 @@ p {
     }
   }
   .fa-dashboard-charts {
-      margin-top: 30px;
-      .card{
-          padding: 24px;
-          color: $white;
-          background-color: $lightDarkBlue;
-      }
+    margin-top: 30px;
+    .card {
+      height: 100%;
+      padding: 24px;
+      color: $white;
+      background-color: $lightDarkBlue;
+    }
   }
 }

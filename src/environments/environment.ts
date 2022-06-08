@@ -12,6 +12,8 @@ export const environment = {
     appId: '1:755787862301:web:1385332363dbdc3c5591f4',
   },
   production: false,
+  baseUrl: 'localhost:8080',
+  mockApi: true
 };
 
 /*
