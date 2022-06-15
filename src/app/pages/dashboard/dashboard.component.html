@@ -85,13 +85,19 @@
       <div class="col-8">
         <div class="card">
           <h5>Hospital Survey</h5>
-          <canvas height="325px" id="chartLineId"></canvas>
+          <app-line-chart></app-line-chart>
+        </div>
+        <div class="fa-appoint-list">
+          <app-table-appoint-list></app-table-appoint-list>
         </div>
       </div>
       <div class="col-4">
         <div class="card">
           <h5>Average Patient Visits</h5>
-          <canvas height="325px" id="chartBarId"></canvas>
+          <app-chart-bar></app-chart-bar>
+        </div>
+        <div class="fa-appoint-list">
+          <app-top-list-doctor></app-top-list-doctor>
         </div>
       </div>
     </div>

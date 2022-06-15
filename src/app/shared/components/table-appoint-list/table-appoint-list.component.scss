@@ -14,6 +14,16 @@ p {
   padding: 30px;
   background-color: #293a58;
   border-radius: 14px;
+  .fa-title-listAppoints {
+    display: flex;
+    justify-content: space-between;
+    h6 {
+      padding: 5px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: $white;
+    }
+  }
   &__avatar {
     // display: inline-block;
     width: 40px;
@@ -46,18 +56,24 @@ p {
     padding: 10px 5px;
     color: $red;
     background-color: $light-red;
-    border-radius: 6px;
+    border-radius: 10px;
     text-align: center;
   }
   &__items {
     display: flex;
     align-items: center;
   }
+  &__diagnostic {
+    border-radius: 10px;
+    padding: 5px;
+    color: $red;
+    background-color: $light-red;
+    text-align: center;
+  }
 
   td,
   th {
-   
-    text-align: left;
+    text-align: center;
     vertical-align: middle;
     font-style: normal;
     line-height: 16px;
@@ -76,6 +92,12 @@ p {
     }
   }
   .fa-head-table {
+    &__head {
+      display: flex;
+    }
+    &__icon {
+      margin-left: 5px;
+    }
     th {
       border: none;
       &:first-child {

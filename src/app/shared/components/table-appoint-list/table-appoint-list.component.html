@@ -1,0 +1,59 @@
+<div class="fa-list-patients">
+  <div class="fa-title-listAppoints">
+    <h6>Appointment Patients List</h6>
+    <div>
+      <svg-icon src="../../../../assets/icons/svg/settingdot.svg"></svg-icon>
+    </div>
+  </div>
+  <p-table [value]="listAppointment" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr class="fa-head-table">
+        <th *ngFor="let headTable of headTables">
+          <div class="fa-head-table__head">
+            <span>
+              {{ headTable }}
+            </span>
+            <div class="fa-head-table__icon">
+              <svg-icon
+                src="../../../../assets/icons/svg/Polygon.svg"
+              ></svg-icon>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-Item>
+      <tr class="fa-body-table">
+        <td>{{ Item.no }}</td>
+        <td>
+          <div class="fa-list-patients__items">
+            <div class="fa-list-patients__avatar">
+              <div class="fa-list-patients__avatar">
+                <svg-icon
+                  src="../../../../assets/icons/svg/avatar.svg"
+                ></svg-icon>
+              </div>
+            </div>
+            <div>{{ Item?.name }}</div>
+          </div>
+        </td>
+        <td>
+          <div class="fa-list-patients__items">
+            <p class="test">
+              {{ Item?.date }}
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="fa-list-patients__diagnostic">Influenza</div>
+        </td>
+        <td>{{ Item?.roomNum }}</td>
+        <td>
+          <svg-icon
+            src="../../../../assets/icons/svg/settingdot.svg"
+          ></svg-icon>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

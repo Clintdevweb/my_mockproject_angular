@@ -47,7 +47,7 @@ const declarations: any = [
   NewAppointmentComponent,
   ListAppointmentComponent,
   AppointmentComponent,
-  PhonePipe
+  PhonePipe,
 ];
 
 @NgModule({

@@ -14,6 +14,16 @@ p {
   padding: 30px;
   background-color: #293a58;
   border-radius: 14px;
+  .fa-title-topdoctors{
+    display: flex;
+    justify-content: space-between;
+    h6{
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: $white
+    }
+  }
   &__avatar {
     // display: inline-block;
     width: 40px;
@@ -42,23 +52,24 @@ p {
     background-color: $light-green;
     border-radius: 6px;
   }
-  &__canceled {
-    padding: 10px 5px;
-    color: $red;
-    background-color: $light-red;
-    border-radius: 6px;
-    text-align: center;
-  }
+  
   &__items {
     display: flex;
     align-items: center;
   }
+  &__diagnostic{
+    border-radius: 10px;
+    padding: 5px;
+    color:$red;
+    background-color: $white;
+    text-align: center;
+  }
 
   td,
   th {
-   
     text-align: left;
     vertical-align: middle;
+
     font-style: normal;
     line-height: 16px;
     font-weight: 500;
@@ -76,6 +87,10 @@ p {
     }
   }
   .fa-head-table {
+  
+    &__icon{
+        margin-left: 5px;
+    }
     th {
       border: none;
       &:first-child {

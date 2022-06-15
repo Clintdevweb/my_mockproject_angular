@@ -1,0 +1,40 @@
+<div class="fa-list-patients">
+  <div class="fa-title-topdoctors">
+    <h6>Top Doctor List</h6>
+    <div>
+      <svg-icon src="../../../../assets/icons/svg/settingdot.svg"></svg-icon>
+    </div>
+  </div>
+  <p-table [value]="listTopDoctor" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr class="fa-head-table">
+        <th>
+          <span>Doctor Name</span>
+        </th>
+        <th>
+          <span>Status</span>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-Item>
+      <tr class="fa-body-table">
+        <td>
+          <div class="fa-list-patients__items">
+            <div class="fa-list-patients__avatar">
+              <div class="fa-list-patients__avatar">
+                <svg-icon
+                  src="../../../../assets/icons/svg/avatar.svg"
+                ></svg-icon>
+              </div>
+            </div>
+            <div>{{ Item?.name }}</div>
+          </div>
+        </td>
+
+        <td>
+          <div class="fa-list-patients__diagnostic">Absend</div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

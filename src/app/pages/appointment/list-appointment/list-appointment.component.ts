@@ -130,14 +130,19 @@ export class ListAppointmentComponent extends BaseComponent implements OnInit {
   }
   ngOnInit() {
     const me = this;
+    me.getListAppointment()
+    me.buildForm();
+  }
+
+  getListAppointment(){
+    const me = this;
     me.apppointServices
       .getListAppoint()
-      .pipe(tap(), takeUntil(me.destroy$))
+      .pipe(takeUntil(me.destroy$))
       .subscribe((listItem: any) => {
         me.listItems = listItem;
-        // console.log(listItem);
+        console.log(listItem);
       });
-    me.buildForm();
   }
 
   focusElementInvalid() {
@@ -172,6 +177,7 @@ export class ListAppointmentComponent extends BaseComponent implements OnInit {
   }
 
   showAppointment(id: string) {
+    console.log(id)
     const me = this;
     me.display = true;
     me.apppointServices.getAppoint(id).subscribe((item) => {
